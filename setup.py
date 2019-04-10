@@ -19,5 +19,6 @@ setup(
         "Topic :: Multimedia :: Sound/Audio",
         "Topic :: Scientific/Engineering",
         "Typing :: Typed"
-    ]
+    ],
+    install_requires=["scipy", "numpy"]
 )

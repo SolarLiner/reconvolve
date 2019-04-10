@@ -4,7 +4,7 @@ import logging
 import sys
 from typing import Dict, List, Optional, Type
 
-from lib import __version__
+from reconvolve import __version__
 
 
 class BaseCommand(abc.ABC):

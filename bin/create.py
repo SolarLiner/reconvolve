@@ -2,7 +2,7 @@ from argparse import ArgumentParser, Namespace
 import logging
 
 from . import BaseCommand
-from lib.probe import Probe
+from reconvolve.probe import Probe
 
 logger = logging.getLogger(__name__)
 
@@ -18,10 +18,7 @@ class CreateCommand(BaseCommand):
 
     def run(self, args: Namespace):
         logger.debug(repr(args.__dict__))
-        w1 = 20
-        w2 = args.samplerate / 2.0
-        p = Probe(w1, w2)
-        p.sample_rate = args.samplerate
+        p = Probe(args.samplerate)
         array = p.generate(args.amplitude, args.length)
         p.write(args.file, array)
         return 0
